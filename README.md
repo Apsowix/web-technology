@@ -3,19 +3,19 @@
 
 ### VerificationCode简介
 
->用户拖动滑块完成时完成校验，支持PC端及移动端。并在后台保存用户校验过程的时间、精度、滑动轨迹等信息。</br>
->输出的验证码为JSON格式，其中大图片是将原图裁剪成横向10份纵向2分共20张图片随机混淆拼接而成的，原图通过在前端移位还原，混淆信息带在JSON上</br>
-> **JSON格式说明：**</br>
-&nbsp;&nbsp;&nbsp;&nbsp;*errcode：状态码*</br>
-&nbsp;&nbsp;&nbsp;&nbsp;*y：裁剪的小图相对左上角的y轴坐标*</br>
-&nbsp;&nbsp;&nbsp;&nbsp;*array：验证码图片混淆规律*</br>
-&nbsp;&nbsp;&nbsp;&nbsp;*imgx：验证码图片宽度*</br>
-&nbsp;&nbsp;&nbsp;&nbsp;*imgy：验证码图片高度*</br>
-&nbsp;&nbsp;&nbsp;&nbsp;*small：裁剪的小图片*</br>
-&nbsp;&nbsp;&nbsp;&nbsp;*normal：验证码混淆后的图片*</br>
-**兼容信息：**兼容主流浏览器，iPhone端的Safari、QQ内置浏览器、微信内置浏览器、Android端主流浏览器
+>Verification is completed when the user drags the slider, and supports PC and mobile terminals. And save the time, accuracy, sliding trajectory and other information of the user verification process in the background. </br>
+>The output verification code is in JSON format. The large picture is randomly mixed and spliced by cutting the original image into 10 parts horizontally and 2 parts vertically. A total of 20 pictures are randomly mixed and spliced. The original image is restored by shifting on the front end, and the confusion information is included in the JSON </br>
+> **JSON format description：**</br>
+&nbsp;&nbsp;&nbsp;&nbsp;*errcode：status code*</br>
+&nbsp;&nbsp;&nbsp;&nbsp;*y：The y-axis coordinate of the cropped small image relative to the upper left corner*</br>
+&nbsp;&nbsp;&nbsp;&nbsp;*array：Verification code image confusion rules*</br>
+&nbsp;&nbsp;&nbsp;&nbsp;*imgx：Verification code image width*</br>
+&nbsp;&nbsp;&nbsp;&nbsp;*imgy：Verification code image height*</br>
+&nbsp;&nbsp;&nbsp;&nbsp;*small：Cropped small picture*</br>
+&nbsp;&nbsp;&nbsp;&nbsp;*normal：Picture after obfuscated verification code*</br>
+**Compatibility information: **Compatible with mainstream browsers, Safari on iPhone, WeChat built-in browser, and mainstream browsers on Android
 
-#### JSON格式示例
+#### JSON format example
 ```  json
 {
   "errcode": 0,
@@ -27,13 +27,13 @@
   "normal":"data:image/jpg;base64,/..."
 }
 ```
-#### 使用示例
+#### Usage example
 ```javascript
 $("#__Verification").slide({
     imgspec: "200*100",
     successCallBack: function () {
         console.log("success");
-        alert('你已通过验证!');
+        alert('You have been verified!');
     }
 });
 ```
